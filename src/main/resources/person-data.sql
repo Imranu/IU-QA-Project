@@ -1,0 +1,1 @@
+INSERT INTO `springprojectdatabase`(`first_name`, `last_name`, `email`, `date_of_birth`, `gender`) VALUES('Michael', 'Jackson', 'MJSing@mail.com', 1999/01/01, 'MALE')
