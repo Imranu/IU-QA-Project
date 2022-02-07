@@ -8,8 +8,8 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 @ToString
-@Setter
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -44,13 +44,13 @@ public class Person {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         Person person = (Person) o;
-        return id != null && Objects.equals(id, person.id);
+        return Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName) && Objects.equals(email, person.email) && Objects.equals(dateOfBirth, person.dateOfBirth) && gender == person.gender;
     }
 
     @Override
     public int hashCode() {
-        return getClass().hashCode();
+        return Objects.hash(firstName, lastName, email, dateOfBirth, gender);
     }
 }
