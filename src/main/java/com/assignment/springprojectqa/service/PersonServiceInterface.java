@@ -1,6 +1,6 @@
-package service;
+package com.assignment.springprojectqa.service;
 
-import model.Person;
+import com.assignment.springprojectqa.model.Person;
 import java.util.List;
 
 public interface PersonServiceInterface {

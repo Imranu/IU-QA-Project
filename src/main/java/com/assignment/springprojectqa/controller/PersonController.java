@@ -1,10 +1,10 @@
-package controller;
+package com.assignment.springprojectqa.controller;
 
-import model.Person;
+import com.assignment.springprojectqa.model.Person;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.PersonService;
+import com.assignment.springprojectqa.service.PersonService;
 
 import java.util.List;
 

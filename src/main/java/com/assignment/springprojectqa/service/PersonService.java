@@ -1,8 +1,8 @@
-package service;
+package com.assignment.springprojectqa.service;
 
-import model.Person;
+import com.assignment.springprojectqa.model.Person;
 import org.springframework.stereotype.Service;
-import repository.PersonRepository;
+import com.assignment.springprojectqa.repository.PersonRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -39,8 +39,8 @@ public class PersonService implements PersonServiceInterface{
         retrievedPerson.setFirstName(updatedPerson.getFirstName());
         retrievedPerson.setLastName(updatedPerson.getLastName());
         retrievedPerson.setEmail(updatedPerson.getEmail());
-        retrievedPerson.setDateOfBirth(updatedPerson.getDateOfBirth());
-        retrievedPerson.setGender(updatedPerson.getGender());
+//        retrievedPerson.setDateOfBirth(updatedPerson.getDateOfBirth());
+//        retrievedPerson.setGender(updatedPerson.getGender());
         return this.personRepository.save(retrievedPerson);
     }
 
