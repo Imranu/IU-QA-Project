@@ -31,10 +31,11 @@ public class Person {
         MALE, FEMALE
     }
 
-    public Person(String firstName, String lastName, String email, LocalDate dateOfBirth) {
+    public Person(String firstName, String lastName, String email, LocalDate dateOfBirth, Gender gender) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.dateOfBirth = dateOfBirth;
+        this.gender = gender;
     }
 }
