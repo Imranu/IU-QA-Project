@@ -39,8 +39,8 @@ public class PersonService implements PersonServiceInterface{
         retrievedPerson.setFirstName(updatedPerson.getFirstName());
         retrievedPerson.setLastName(updatedPerson.getLastName());
         retrievedPerson.setEmail(updatedPerson.getEmail());
-//        retrievedPerson.setDateOfBirth(updatedPerson.getDateOfBirth());
-//        retrievedPerson.setGender(updatedPerson.getGender());
+        retrievedPerson.setDateOfBirth(updatedPerson.getDateOfBirth());
+        retrievedPerson.setGender(updatedPerson.getGender());
         return this.personRepository.save(retrievedPerson);
     }
 
