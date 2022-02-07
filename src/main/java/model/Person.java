@@ -25,6 +25,11 @@ public class Person {
     private String lastName;
     private String email;
     private LocalDate dateOfBirth;
+    private Gender gender;
+
+    enum Gender {
+        MALE, FEMALE
+    }
 
     public Person(String firstName, String lastName, String email, LocalDate dateOfBirth) {
         this.firstName = firstName;
