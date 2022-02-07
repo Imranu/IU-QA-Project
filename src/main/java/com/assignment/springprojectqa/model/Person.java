@@ -1,7 +1,7 @@
 package com.assignment.springprojectqa.model;
 
+import com.assignment.springprojectqa.enums.Gender;
 import lombok.*;
-import org.hibernate.Hibernate;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -28,10 +28,6 @@ public class Person {
     private LocalDate dateOfBirth;
 
     private Gender gender;
-
-    enum Gender {
-        MALE, FEMALE
-    }
 
     public Person(String firstName, String lastName, String email, LocalDate dateOfBirth, Gender gender) {
         this.firstName = firstName;
