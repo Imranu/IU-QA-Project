@@ -1,14 +1,9 @@
-package model;
+package com.assignment.springprojectqa.model;
 
 import lombok.*;
 import org.hibernate.Hibernate;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
-import java.time.LocalDate;
+import javax.persistence.*;
 import java.util.Objects;
 
 @ToString
@@ -23,31 +18,26 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
     private String firstName;
 
-    @NotNull
     private String lastName;
 
-    @NotNull
     private String email;
 
-    @NotNull
-    private LocalDate dateOfBirth;
+//    private LocalDate dateOfBirth;
+//
+//    private Gender gender;
+//
+//    enum Gender {
+//        MALE, FEMALE
+//    }
 
-    @NotNull
-    private Gender gender;
-
-    enum Gender {
-        MALE, FEMALE
-    }
-
-    public Person(String firstName, String lastName, String email, LocalDate dateOfBirth, Gender gender) {
+    public Person(String firstName, String lastName, String email/*, LocalDate dateOfBirth, Gender gender*/) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.dateOfBirth = dateOfBirth;
-        this.gender = gender;
+//        this.dateOfBirth = dateOfBirth;
+//        this.gender = gender;
     }
 
     @Override

@@ -1,10 +1,10 @@
-package controller;
+package com.assignment.springprojectqa.controller;
 
-import model.Person;
+import com.assignment.springprojectqa.model.Person;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.PersonService;
+import com.assignment.springprojectqa.service.PersonService;
 
 import java.util.List;
 
@@ -44,7 +44,7 @@ public class PersonController {
     //    Person updateById(Long id, Person updatedPerson);
     @PutMapping(path = "/{id}")
     public ResponseEntity updateById(@PathVariable Long id, @RequestBody Person person) {
-        Person returnValue = this.personService.deleteById(id);
+        Person returnValue = this.personService.updateById(id, person);
         if (returnValue != null) {
             return new ResponseEntity<>(returnValue, HttpStatus.ACCEPTED);
         } else {
