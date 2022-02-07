@@ -1,7 +1,6 @@
 package model;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,6 +8,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDate;
 
+@ToString
+@EqualsAndHashCode
+@Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -22,11 +25,17 @@ public class Person {
     private String lastName;
     private String email;
     private LocalDate dateOfBirth;
+    private Gender gender;
 
-    public Person(String firstName, String lastName, String email, LocalDate dateOfBirth) {
+    enum Gender {
+        MALE, FEMALE
+    }
+
+    public Person(String firstName, String lastName, String email, LocalDate dateOfBirth, Gender gender) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.dateOfBirth = dateOfBirth;
+        this.gender = gender;
     }
 }
