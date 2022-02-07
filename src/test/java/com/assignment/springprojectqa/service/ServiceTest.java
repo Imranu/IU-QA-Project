@@ -2,7 +2,6 @@ package com.assignment.springprojectqa.service;
 
 import com.assignment.springprojectqa.model.Person;
 import com.assignment.springprojectqa.repository.PersonRepository;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +33,8 @@ public class ServiceTest {
     Person extraPerson = new Person(2L, "best", "test", "test@gmail.com", LocalDate.of(1999,10,23), FEMALE);
     Person updatedPerson = new Person(1L, "best", "test", "test@gmail.com", LocalDate.of(1999,10,23), FEMALE);
     Person deletedPerson = new Person(1L, "test", "person", "test@mail.com", LocalDate.of(2000,01,01), MALE);
+    Long validId = 1L;
+    Long invalidId = 541345L;
 
     @Test
     public void testCreate() {
@@ -71,8 +72,6 @@ public class ServiceTest {
     @Test
     public void testGetById() {
 
-        Long validId = 1L;
-
         savedPerson.setId(validId);
 
         assertEquals(validId, savedPerson.getId());
@@ -90,13 +89,9 @@ public class ServiceTest {
     @Test
     public void testGetByIdInvalid() {
 
-        Long validId = 1L;
-
         savedPerson.setId(validId);
 
         assertEquals(validId, savedPerson.getId());
-
-        Long invalidId = 541345L;
 
         Optional<Person> optionalPerson = Optional.of(savedPerson);
 
@@ -110,8 +105,6 @@ public class ServiceTest {
 
     @Test
     public void testUpdateById() {
-
-        Long validId = 1L;
 
         savedPerson.setId(validId);
 
@@ -131,14 +124,9 @@ public class ServiceTest {
 
     @Test
     public void testUpdateByIdInvalid() {
-
-        Long validId = 1L;
-
         savedPerson.setId(validId);
 
         assertEquals(validId, savedPerson.getId());
-
-        Long invalidId = 541345L;
 
         Optional<Person> optionalPerson = Optional.of(updatedPerson);
 
@@ -152,8 +140,6 @@ public class ServiceTest {
 
     @Test
     public void testDeleteById() {
-
-        Long validId = 1L;
 
         savedPerson.setId(validId);
 
@@ -171,13 +157,9 @@ public class ServiceTest {
     @Test
     public void testDeleteByIdInvalid() {
 
-        Long validId = 1L;
-
         savedPerson.setId(validId);
 
         assertEquals(validId, savedPerson.getId());
-
-        Long invalidId = 541345L;
 
         Mockito.when(this.personRepository.findById(invalidId)).thenReturn(Optional.ofNullable(null));
 
