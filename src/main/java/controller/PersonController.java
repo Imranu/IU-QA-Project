@@ -9,7 +9,7 @@ import service.PersonService;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/api")
+@RequestMapping(path = "/api/person")
 public class PersonController {
 
     private PersonService personService;
@@ -20,7 +20,7 @@ public class PersonController {
 
     //    Person create(Person createdPerson);
     @PostMapping
-    public ResponseEntity create(Person person) {
+    public ResponseEntity create(@RequestBody Person person) {
         return new ResponseEntity(this.personService.create(person), HttpStatus.CREATED);
     }
 
