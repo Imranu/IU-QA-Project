@@ -1,8 +1,9 @@
 package service;
 
+import model.Person;
 import java.util.List;
 
-public interface PersonServiceInterface<Person> {
+public interface PersonServiceInterface {
 
     Person create(Person createdPerson);
 
@@ -10,7 +11,7 @@ public interface PersonServiceInterface<Person> {
 
     Person getById(Long id);
 
-    Person update(Long id, Person updatedPerson);
+    Person updateById(Long id, Person updatedPerson);
 
     Person deleteById(Long id);
 
