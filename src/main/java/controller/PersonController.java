@@ -44,7 +44,7 @@ public class PersonController {
     //    Person updateById(Long id, Person updatedPerson);
     @PutMapping(path = "/{id}")
     public ResponseEntity updateById(@PathVariable Long id, @RequestBody Person person) {
-        Person returnValue = this.personService.deleteById(id);
+        Person returnValue = this.personService.updateById(id, person);
         if (returnValue != null) {
             return new ResponseEntity<>(returnValue, HttpStatus.ACCEPTED);
         } else {
