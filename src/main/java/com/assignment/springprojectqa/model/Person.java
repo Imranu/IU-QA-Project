@@ -4,6 +4,7 @@ import lombok.*;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Objects;
 
 @ToString
@@ -24,20 +25,20 @@ public class Person {
 
     private String email;
 
-//    private LocalDate dateOfBirth;
-//
-//    private Gender gender;
-//
-//    enum Gender {
-//        MALE, FEMALE
-//    }
+    private LocalDate dateOfBirth;
 
-    public Person(String firstName, String lastName, String email/*, LocalDate dateOfBirth, Gender gender*/) {
+    private Gender gender;
+
+    enum Gender {
+        MALE, FEMALE
+    }
+
+    public Person(String firstName, String lastName, String email, LocalDate dateOfBirth, Gender gender) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-//        this.dateOfBirth = dateOfBirth;
-//        this.gender = gender;
+        this.dateOfBirth = dateOfBirth;
+        this.gender = gender;
     }
 
     @Override
