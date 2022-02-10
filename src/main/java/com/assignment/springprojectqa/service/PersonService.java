@@ -29,7 +29,10 @@ public class PersonService implements PersonServiceInterface<Person>{
     @Override
     public Person getById(Long id) {
         Optional <Person> optionalPerson = this.personRepository.findById(id);
-        return optionalPerson.orElse(null);
+        if (optionalPerson.isEmpty()) {
+            return null;
+        }
+        return optionalPerson.get();
     }
 
     @Override
@@ -50,7 +53,10 @@ public class PersonService implements PersonServiceInterface<Person>{
     @Override
     public Person deleteById(Long id) {
         Optional <Person> optionalPerson = this.personRepository.findById(id);
+        if (optionalPerson.isEmpty()) {
+            return null;
+        }
         this.personRepository.deleteById(id);
-        return optionalPerson.orElse(null);
+        return optionalPerson.get();
     }
 }

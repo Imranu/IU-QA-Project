@@ -166,7 +166,6 @@ public class ServiceTest {
         assertEquals(null, this.personService.deleteById(invalidId));
 
         Mockito.verify(this.personRepository, Mockito.times(1)).findById(invalidId);
-        Mockito.verify(this.personRepository, Mockito.times(1)).deleteById(invalidId);
 
     }
 

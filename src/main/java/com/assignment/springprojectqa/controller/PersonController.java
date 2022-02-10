@@ -38,7 +38,7 @@ public class PersonController {
         if (returnValue != null) {
             return new ResponseEntity<Person>(returnValue, HttpStatus.FOUND);
         } else {
-            return new ResponseEntity<String>("Not Found", HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
@@ -49,7 +49,7 @@ public class PersonController {
         if (returnValue != null) {
             return new ResponseEntity<Person>(returnValue, HttpStatus.ACCEPTED);
         } else {
-            return new ResponseEntity<String>("Not Found", HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
@@ -57,10 +57,10 @@ public class PersonController {
     @DeleteMapping(path = "/{id}")
     public ResponseEntity deleteById(@PathVariable Long id) {
         Person returnValue = this.personService.deleteById(id);
-        if (returnValue != null) {
-            return new ResponseEntity<Person>(returnValue, HttpStatus.ACCEPTED);
+        if (returnValue == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
-            return new ResponseEntity<String>("Not Found", HttpStatus.NOT_FOUND);
+            return new ResponseEntity<Person>(returnValue, HttpStatus.ACCEPTED);
         }
     }
 
