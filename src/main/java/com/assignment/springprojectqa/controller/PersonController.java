@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "/api/person")
+@CrossOrigin
 public class PersonController {
 
     private PersonService personService;
@@ -20,14 +21,14 @@ public class PersonController {
 
     //    Person create(Person createdPerson);
     @PostMapping
-    public ResponseEntity create(@RequestBody Person person) {
-        return new ResponseEntity(this.personService.create(person), HttpStatus.CREATED);
+    public ResponseEntity<Person> create(@RequestBody Person person) {
+        return new ResponseEntity<>(this.personService.create(person), HttpStatus.CREATED);
     }
 
     //    List<Person> getAll();
     @GetMapping
-    public ResponseEntity getAll() {
-        return new ResponseEntity<List<Person>>(this.personService.getAll(), HttpStatus.FOUND);
+    public ResponseEntity<List<Person>> getAll() {
+        return new ResponseEntity<>(this.personService.getAll(), HttpStatus.FOUND);
     }
 
     //    Person getById(Long id);

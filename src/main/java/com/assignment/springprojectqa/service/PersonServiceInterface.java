@@ -1,18 +1,17 @@
 package com.assignment.springprojectqa.service;
 
-import com.assignment.springprojectqa.model.Person;
 import java.util.List;
 
-public interface PersonServiceInterface {
+public interface PersonServiceInterface<T> {
 
-    Person create(Person createdPerson);
+    T create(T t);
 
-    List<Person> getAll();
+    List<T> getAll();
 
-    Person getById(Long id);
+    T getById(Long id);
 
-    Person updateById(Long id, Person updatedPerson);
+    T updateById(Long id, T t);
 
-    Person deleteById(Long id);
+    T deleteById(Long id);
 
 }

@@ -5,7 +5,6 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Objects;
 
 @ToString
 @Getter
@@ -37,16 +36,4 @@ public class Person {
         this.gender = gender;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Person person = (Person) o;
-        return Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName) && Objects.equals(email, person.email) && Objects.equals(dateOfBirth, person.dateOfBirth) && gender == person.gender;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(firstName, lastName, email, dateOfBirth, gender);
-    }
 }
