@@ -2,14 +2,19 @@ package com.assignment.springprojectqa.model;
 
 import nl.jqno.equalsverifier.EqualsVerifier;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
+import static com.assignment.springprojectqa.enums.Gender.*;
 
 import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@SpringBootTest
+@ActiveProfiles("test")
 public class PersonTest {
 
-    Person testPerson = new Person(1L, "test", "person", "test@mail.com", LocalDate.of(2000,01,01), Person.Gender.MALE);
+    private Person testPerson = new Person(1L, "test", "person", "test@mail.com", LocalDate.of(2000,01,01), MALE);
 
     @Test
     public void testNoArgsConstructor() {
@@ -23,13 +28,13 @@ public class PersonTest {
 
     @Test
     public void testCustomArgsConstructor() {
-        Person testPerson = new Person( "test", "person", "test@mail.com", LocalDate.of(2000,01,01), Person.Gender.MALE);
+        Person testPerson = new Person( "test", "person", "test@mail.com", LocalDate.of(2000,01,01), MALE);
     assertEquals(null, testPerson.getId());
     assertEquals("test", testPerson.getFirstName());
     assertEquals("person", testPerson.getLastName());
     assertEquals("test@mail.com", testPerson.getEmail());
     assertEquals(LocalDate.of(2000,01,01), testPerson.getDateOfBirth());
-    assertEquals(Person.Gender.MALE, testPerson.getGender());
+    assertEquals(MALE, testPerson.getGender());
     assertEquals(Person.class, testPerson.getClass());
     }
 
@@ -46,14 +51,14 @@ public class PersonTest {
         testPerson.setLastName("test");
         testPerson.setEmail("test@gmail.com");
         testPerson.setDateOfBirth(LocalDate.of(1999,10,23));
-        testPerson.setGender(Person.Gender.FEMALE);
+        testPerson.setGender(FEMALE);
 
         assertEquals(2L, testPerson.getId());
         assertEquals("best", testPerson.getFirstName());
         assertEquals("test", testPerson.getLastName());
         assertEquals("test@gmail.com", testPerson.getEmail());
         assertEquals(LocalDate.of(1999,10,23), testPerson.getDateOfBirth());
-        assertEquals(Person.Gender.FEMALE, testPerson.getGender());
+        assertEquals(FEMALE, testPerson.getGender());
 
     }
 

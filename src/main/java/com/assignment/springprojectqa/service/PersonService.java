@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class PersonService implements PersonServiceInterface{
+public class PersonService implements PersonServiceInterface<Person>{
 
     private PersonRepository personRepository;
 
@@ -35,6 +35,9 @@ public class PersonService implements PersonServiceInterface{
     @Override
     public Person updateById(Long id, Person updatedPerson) {
         Optional <Person> optionalPerson = this.personRepository.findById(id);
+        if (optionalPerson.isEmpty()) {
+            return null;
+        }
         Person retrievedPerson = optionalPerson.get();
         retrievedPerson.setFirstName(updatedPerson.getFirstName());
         retrievedPerson.setLastName(updatedPerson.getLastName());

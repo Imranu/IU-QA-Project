@@ -10,4 +10,9 @@ class SpringProjectQaApplicationTests {
     void contextLoads() {
     }
 
+//    @Test
+//    public void applicationContextTest() {
+//        SpringProjectQaApplication.main(new String[] {});
+//    }
+
 }
