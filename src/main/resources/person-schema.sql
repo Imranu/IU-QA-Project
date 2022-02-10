@@ -1,5 +1,5 @@
-drop table if exists `person` CASCADE;
-create table `person` (
+DROP TABLE if EXISTS `person` CASCADE;
+CREATE TABLE person (
     id bigint not null auto_increment,
     date_of_birth date,
     email varchar(255),
