@@ -1,10 +1,10 @@
-drop table if exists `springprojectdatabase` CASCADE;
-CREATE TABLE `springprojectdatabase` (
-    id BIGINT AUTO_INCREMENT,
-    first_name VARCHAR(255),
-    last_name VARCHAR(255),
-    email_name VARCHAR(255),
-    date_of_birth DATE,
-    gender VARCHAR(6),
-    PRIMARY KEY (id)
+DROP TABLE if EXISTS `person` CASCADE;
+CREATE TABLE person (
+    id bigint not null auto_increment,
+    date_of_birth date,
+    email varchar(255),
+    first_name varchar(255),
+    gender integer,
+    last_name varchar(255),
+    primary key (id)
 );
