@@ -1,4 +1,4 @@
-Imran Uddin QA Assignment
+#Imran Uddin QA Assignment
 
 Why are we doing this?
 
@@ -17,17 +17,25 @@ Possible improvements for future revisions of the project.
 - Relational Databases...
 
 Screenshots showing your postman requests and the output from the API.
+- Postman Create
 ![alt text](images/PostmanCreate.PNG)
+- Postman Delete
 ![alt text](images/PostmanDeleteById.PNG)
+- Postman Get
 ![alt text](images/PostmanGetAll.PNG)
+- Postman Get by ID
 ![alt text](images/PostmanGetById.PNG)
+- Postman Update
 ![alt text](images/PostmanUpdateById.PNG)
 
 Screenshots of your database to prove that data is being persisted.
+- Mysql Terminal
 ![alt text](images/MysqlDB.PNG)
+- Mysql Workbench
 ![alt text](images/MysqlWorkbench.PNG)
 
 Screenshot of your test results, including coverage report.
+- 100% Coverage
 ![alt text](images/Coverage.PNG)
 
 Link to Jira Board 
