@@ -17,15 +17,15 @@ Possible improvements for future revisions of the project.
 - Relational Databases...
 
 Screenshots showing your postman requests and the output from the API.
-![alt text](images/Postman Create.PNG)
-![alt text](images/Postman Delete By Id.PNG)
-![alt text](images/Postman Get All.PNG)
-![alt text](images/Postman Get By Id.PNG)
-![alt text](images/Postman Update By Id.PNG)
+![alt text](images/PostmanCreate.PNG)
+![alt text](images/PostmanDeleteById.PNG)
+![alt text](images/PostmanGetAll.PNG)
+![alt text](images/PostmanGetById.PNG)
+![alt text](images/PostmanUpdateById.PNG)
 
 Screenshots of your database to prove that data is being persisted.
-![alt text](images/Mysql DB.PNG)
-![alt text](images/Mysql Workbench.PNG)
+![alt text](images/MysqlDB.PNG)
+![alt text](images/MysqlWorkbench.PNG)
 
 Screenshot of your test results, including coverage report.
 ![alt text](images/Coverage.PNG)
