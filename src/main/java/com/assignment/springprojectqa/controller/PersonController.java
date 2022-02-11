@@ -33,23 +33,23 @@ public class PersonController {
 
     //    Person getById(Long id);
     @GetMapping(path = "/{id}")
-    public ResponseEntity getById(@PathVariable Long id) {
+    public ResponseEntity<?> getById(@PathVariable Long id) {
         Person returnValue = this.personService.getById(id);
         if (returnValue != null) {
             return new ResponseEntity<Person>(returnValue, HttpStatus.FOUND);
         } else {
-            return new ResponseEntity<String>("Not Found", HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
     //    Person updateById(Long id, Person updatedPerson);
     @PutMapping(path = "/{id}")
-    public ResponseEntity updateById(@PathVariable Long id, @RequestBody Person person) {
+    public ResponseEntity<?> updateById(@PathVariable Long id, @RequestBody Person person) {
         Person returnValue = this.personService.updateById(id, person);
         if (returnValue != null) {
-            return new ResponseEntity<>(returnValue, HttpStatus.ACCEPTED);
+            return new ResponseEntity<Person>(returnValue, HttpStatus.ACCEPTED);
         } else {
-            return new ResponseEntity<String>("Not Found", HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
@@ -57,10 +57,10 @@ public class PersonController {
     @DeleteMapping(path = "/{id}")
     public ResponseEntity deleteById(@PathVariable Long id) {
         Person returnValue = this.personService.deleteById(id);
-        if (returnValue != null) {
-            return new ResponseEntity(returnValue, HttpStatus.ACCEPTED);
+        if (returnValue == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
-            return new ResponseEntity("Not Found", HttpStatus.NOT_FOUND);
+            return new ResponseEntity<Person>(returnValue, HttpStatus.ACCEPTED);
         }
     }
 
