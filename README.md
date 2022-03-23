@@ -40,7 +40,7 @@ Screenshot of your test results, including coverage report.
 
 ERD Diagram
 - Person Class
-![alt text](Person Diagram.png)
+![alt text](personDiagram.png)
 
 Link to Jira Board 
 - https://imranqajira.atlassian.net/jira/software/projects/PER/boards/4/roadmap?shared=&atlOrigin=eyJpIjoiNDNjNDM1MjYwYzM1NDY5MDliMGIxMTM5MWNkYzg3MjMiLCJwIjoiaiJ9
